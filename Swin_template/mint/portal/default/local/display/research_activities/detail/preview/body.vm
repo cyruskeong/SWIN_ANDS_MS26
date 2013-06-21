@@ -1,0 +1,203 @@
+#macro( displayValue $value )
+  #if($value.size() > 1)
+    #foreach($item in $value)
+      <span class="meta-value">$self.escape($item)</span><br/>
+    #end
+ #elseif($value.size() == 0)
+       $self.escape("")
+ #else
+    $self.escape($value.get(0))
+  #end
+#end
+<table class="meta">
+    <tr>
+        <th width="25%">$parent.getFriendlyName("dc_title")</th>
+        <td>
+        #displayValue( $metadata.getList("dc_title"))
+	</td>
+    </tr>
+
+    <tr>	
+	<th width="25%">$parent.getFriendlyName("dc_subject")</th>
+        <td>
+        #displayValue( $metadata.getList("dc_subject"))
+	</td>
+    </tr>
+	
+    <tr>
+        <th width="25%">$parent.getFriendlyName("dc_description")</th>
+        <td>
+        #displayValue($metadata.getList("dc_description"))
+        </td>
+    </tr>
+
+    <tr>
+	<th width="25%">$parent.getFriendlyName("grant_number")</th>
+        <td>
+        #displayValue( $metadata.getList("grant_number"))
+	</td>
+    </tr>
+
+    <tr>
+        <th width="25%">$parent.getFriendlyName("dc_identifier")</th>
+        <td>
+            #set($valueList = $metadata.getList("dc_identifier"))
+            #if($valueList.size() > 1)
+                #foreach($value in $valueList)
+                    <span class="meta-value">$self.escape($value)</span><br/>
+                #end
+            #else
+                $self.escape($valueList.get(0))
+            #end
+        </td>
+    </tr>
+
+
+    <tr>
+        <th width="25%">$parent.getFriendlyName("display_type")</th>
+        <td>
+        #displayValue($metadata.getList("display_type"))
+        </td>
+    </tr>
+	
+    <tr>
+        <th width="25%">$parent.getFriendlyName("foaf_name")</th>
+        <td>
+        #displayValue($metadata.getList("foaf_name"))
+        </td>
+    </tr>
+
+    <tr>
+        <th width="25%">$parent.getFriendlyName("dc_date")</th>
+        <td>
+        #displayValue($metadata.getList("dc_date"))
+        </td>
+    </tr>
+
+    <tr>
+        <th width="25%">$parent.getFriendlyName("dc_format")</th>
+        <td>
+        #displayValue($metadata.getList("dc_format"))
+        </td>
+    </tr>
+
+     <tr>
+        <th width="25%">$parent.getFriendlyName("dc_contributor")</th>
+        <td>
+        #displayValue($metadata.getList("dc_contributor"))
+        </td>
+    </tr>
+
+    <tr>
+        <th width="25%">$parent.getFriendlyName("dc_identifier")</th>
+        <td>
+        #displayValue($metadata.getList("dc_identifier"))
+        </td>
+    </tr>
+
+   <tr>
+        <th width="25%">$parent.getFriendlyName("dc_date_submitted")</th>
+        <td>
+        #displayValue($metadata.getList("dc_date_submitted"))
+        </td>
+    </tr>
+
+   <tr>
+        <th width="25%">$parent.getFriendlyName("known_ids")</th>
+        <td>
+            #set($valueList = $metadata.getList("known_ids"))
+            #if($valueList.size() > 1)
+                #foreach($value in $valueList)
+                    <span class="meta-value">$self.escape($value)</span><br/>
+                #end
+            #else
+                $self.escape($valueList.get(0))
+            #end
+        </td>
+    </tr>
+
+#*
+Mint internal technical metadata
+
+*#
+    <tr>
+        <th width="25%">$parent.getFriendlyName("id")</th>
+        <td>
+        #displayValue($metadata.getList("id"))
+        </td>
+    </tr>
+
+    <tr>
+        <th width="25%">$parent.getFriendlyName("storage_id")</th>
+        <td>
+        #displayValue($metadata.getList("storage_id"))
+        </td>
+    </tr>
+
+    <tr>
+    <th width="25%">$parent.getFriendlyName("harvest_rules")</th>
+        <td>
+            #set($valueList = $metadata.getList("harvest_rules"))
+            #if($valueList.size() > 1)
+                #foreach($value in $valueList)
+                    <span class="meta-value">$self.escape($value)</span><br/>
+                #end
+            #else
+                $self.escape($valueList.get(0))
+            #end
+        </td>
+    </tr>
+
+    <tr>
+        <th width="25%">$parent.getFriendlyName("harvest_config")</th>
+        <td>
+        #displayValue($metadata.getList("harvest_config"))
+        </td>
+    </tr>
+	
+    <tr>
+        <th width="25%">$parent.getFriendlyName("last_modified")</th>
+        <td>
+         #displayValue($metadata.getList("last_modified"))
+        </td>
+    </tr>
+	
+    <tr>
+        <th width="25%">$parent.getFriendlyName("security_filter")</th>
+        <td>
+        #displayValue($metadata.getList("security_filter"))
+        </td>
+    </tr>
+
+    <tr>
+        <th width="25%">$parent.getFriendlyName("repository_name")</th>
+        <td>
+        #displayValue($metadata.getList("repository_name"))
+        </td>
+    </tr>
+
+    <tr>
+        <th width="25%">$parent.getFriendlyName("repository_type")</th>
+        <td>
+        #displayValue($metadata.getList("repository_type"))
+        </td>
+    </tr>
+
+
+    <tr>
+        <th width="25%">$parent.getFriendlyName("oai_set")</th>
+        <td>
+        #displayValue($metadata.getList("oai_set"))
+        </td>
+    </tr>
+</table>
+#*
+<hr/>
+#foreach($key in $metadata.getJsonObject().keySet())
+  $key - 
+  #displayValue($metadata.getList($key))
+  <br/>
+#end
+<hr/>
+*#
+
