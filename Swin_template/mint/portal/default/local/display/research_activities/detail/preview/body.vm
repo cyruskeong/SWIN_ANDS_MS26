@@ -204,6 +204,30 @@ Mint internal technical metadata
         #displayValue($metadata.getList("oai_set"))
         </td>
     </tr>
+    
+    <tr>
+        <th width="25%">$parent.getFriendlyName("oai_identifier")</th>
+        <td>
+        #displayValue($metadata.getList("oai_identifier"))
+        </td>
+    </tr>
+
+
+    <tr>
+        <th width="25%">$parent.getFriendlyName("pidProperty")</th>
+        <td>
+        #displayValue($metadata.getList("pidProperty"))
+        </td>
+    </tr>
+
+     <tr>
+        <th width="25%">$parent.getFriendlyName("ready_for_nla")</th>
+        <td>
+        #displayValue($metadata.getList("ready_for_nla"))
+        </td>
+     </tr>
+    
+    
 </table>
 #*
 <hr/>
