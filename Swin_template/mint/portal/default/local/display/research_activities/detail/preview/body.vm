@@ -39,6 +39,20 @@
     </tr>
 
     <tr>
+	<th width="25%">$parent.getFriendlyName("grant_start_date")</th>
+        <td>
+        #displayValue( $metadata.getList("grant_start_date"))
+	</td>
+    </tr>
+    
+    <tr>
+	<th width="25%">$parent.getFriendlyName("grant_end_date")</th>
+        <td>
+        #displayValue( $metadata.getList("grant_end_date"))
+	</td>
+    </tr>
+
+    <tr>
         <th width="25%">$parent.getFriendlyName("dc_identifier")</th>
         <td>
             #set($valueList = $metadata.getList("dc_identifier"))
