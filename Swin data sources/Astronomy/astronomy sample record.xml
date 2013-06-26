@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><?mso-infoPathSolution productVersion="14.0.0" PIVersion="1.0.0.0" name="urn:schemas-microsoft-com:office:infopath:ReDBox-Form:-myXSD-2011-09-26T07-17-47" href="file:///C:\dev\ReDBox\code\src\main\config\home\data\experimental\xml_ingest\ReDBox%20Form.xsn" solutionVersion="1.0.0.43" ?><?mso-application progid="InfoPath.Document" versionProgid="InfoPath.Document.3"?>
+<my:RedboxCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2011-09-26T07:17:47" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003" xml:lang="en-au">
+    <my:Title>Suitcase size selection as a correlate with gender dimorphism 2</my:Title>
+    <my:Type>dataset</my:Type>
+    <my:DateCreated>2013-06-26</my:DateCreated>
+    <my:DateModified>2013-06-26</my:DateModified>
+    <my:Description>
+	The Parkes High Time Resolution Universe (HRTU) Legacy Survey will perform a comprehensive survey of the Galaxy for millisecond and regular pulsars, rotating radio transients, and giant pulses. The survey will also have exceptional sensitivity to short-duration extragalactic radio bursts. This collaborative project includes the Swinburne University of Technology Pulsar Group, the University of Manchester Pulsar Group, the University of Cagliari Pulsar Group and the Australia Telescope National Facility.
+ 
+The HRTU Survey strategy is to map the Milky Way in three regions; High-latitude, Medium-latitude, Low-latitude. In the Low-latitude region of the sky promises to reveal the largest number of pulsars and also the most compact binary systems. However, here we also encounter the largest amount of interstellar medium between the Earth and the pulsar. In the Medium-latitude region, above and below the Galactic plane, we expect a large number of millisecond pulsars which are very old and therefore had a long time to move away from their birth place. Even further away from the plane, in the High-latitude region the number of pulsars will become less but we explore a part of the sky that has never been searched for fast transient radio sources, possibly even emerging from extragalactic sources.
+ 
+Survey parameters: Medium-latitude Survey
+ 
+
+
+*** Information in this section would change via alerts..
+
+Time of each observation: 540s
+Sampling time: 64 micro seconds
+Number of channels: +870
+Data per beam: 2.0 Gigabytes
+ 
+
+**other symbols likely to be used
+
+\alpha \beta degree symbols
+
+ 
+Related Parkes datasets:
+ 
+Cspr2: P140 csiro:140 link
+Aspr: P100. P140, P136
+Caspr etc..
+ 	</my:Description>
+    <my:Creators>
+        <my:Creator>
+            <my:CreatorTitle>Mr</my:CreatorTitle>
+            <my:CreatorGiven>Cyrus</my:CreatorGiven>
+            <my:CreatorFamily>Keong</my:CreatorFamily>
+            <my:CreatorID></my:CreatorID>
+            <my:CreatorAffiliation></my:CreatorAffiliation>
+            <my:CreatorAffiliationID></my:CreatorAffiliationID>
+            <my:CreatorPI>true</my:CreatorPI>
+            <my:CreatorCI>false</my:CreatorCI>
+        </my:Creator>
+    </my:Creators>
+    <my:PrimaryContact>
+        <my:PrimaryContactFirstName>Arna</my:PrimaryContactFirstName>
+        <my:PrimaryContactFamilyName>Karick</my:PrimaryContactFamilyName>
+        <my:PrimaryContactEmail>arna@example.com</my:PrimaryContactEmail>
+        <my:PrimaryContactTitle>Dr</my:PrimaryContactTitle>
+        <my:PrimaryContactID></my:PrimaryContactID>
+    </my:PrimaryContact>
+    <my:Supervisors>
+        <my:Supervisor>
+            <my:SupervisorTitle>Ms</my:SupervisorTitle>
+            <my:SupervisorFirstName>Samara</my:SupervisorFirstName>
+            <my:SupervisorFamilyName>Neilson</my:SupervisorFamilyName>
+            <my:SupervisorID></my:SupervisorID>
+        </my:Supervisor>
+    </my:Supervisors>
+    <my:Collaborators>
+        <my:Collaborator>
+            <my:CollaboratorName>Swinburne Research Centre</my:CollaboratorName>
+        </my:Collaborator>
+    </my:Collaborators>
+    <my:Keywords>
+        <my:Keyword>
+            <my:KeywordValue>New keyword1</my:KeywordValue>
+        </my:Keyword>
+        <my:Keyword>
+            <my:KeywordValue>New keyword2</my:KeywordValue>
+        </my:Keyword>
+    </my:Keywords>
+    <my:TypeOfActivity>applied</my:TypeOfActivity>
+    <my:Rights>
+        <my:RightsAccess>All luggage-based data is in a locker</my:RightsAccess>
+        <my:RightsStatement></my:RightsStatement>
+        <my:RightsCCLicence>http://creativecommons.org/licenses/by/3.0/au</my:RightsCCLicence>
+        <my:RightsOtherName></my:RightsOtherName>
+        <my:RightsOtherURL></my:RightsOtherURL>
+    </my:Rights>
+    <my:Identifier>
+        <my:IdentifierType></my:IdentifierType>
+        <my:IdentifierValue></my:IdentifierValue>
+        <my:IdentifierUseMetadataID>false</my:IdentifierUseMetadataID>
+    </my:Identifier>
+    <my:DisposalDate>2013-06-01</my:DisposalDate>
+    <my:GrantNumbers>
+        <my:GrantNumber>
+            <my:GrantNumberInternal>true</my:GrantNumberInternal>
+            <my:GrantNumberID>12345</my:GrantNumberID>
+            <my:GrantNumberDescription>Supercomputing research grant</my:GrantNumberDescription>
+        </my:GrantNumber>
+    </my:GrantNumbers>
+    <my:ProjectTitle>Centre for Astrophysics and Supercomputing researcb</my:ProjectTitle>
+    <my:Depositor>Sample Depositor</my:Depositor>
+    <my:DataSize>1Mb</my:DataSize>
+    <my:DataManagementPolicy></my:DataManagementPolicy>
+    <my:DataManagementPlan>
+        <my:DataManagementPlanExists>true</my:DataManagementPlanExists>
+        <my:DataManagementPlanNotes></my:DataManagementPlanNotes>
+    </my:DataManagementPlan>
+    <my:SubmissionDetails>
+        <my:WorkflowSource>Astronomy</my:WorkflowSource>
+        <my:ContactPersonName>Astronomy Person</my:ContactPersonName>
+        <my:ContactPersonEmail>person@example.com</my:ContactPersonEmail>
+        <my:ContactPersonPhone>0412111111</my:ContactPersonPhone>
+    </my:SubmissionDetails>
+</my:RedboxCollection>
