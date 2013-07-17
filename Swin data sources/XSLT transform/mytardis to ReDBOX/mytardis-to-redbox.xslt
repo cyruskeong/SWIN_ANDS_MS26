@@ -5,43 +5,47 @@
     xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2011-09-26T07:17:47"
     exclude-result-prefixes="xsl">
     
+    <xsl:variable name="originating_mytardis" select="'caousMyTardis'"/>
+    
     <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
     
     <xsl:template match="/">
         
         <xsl:variable name="allRecords" select="."/>
-        <xsl:for-each select="oai:OAI-PMH/oai:ListRecords/oai:record">
+        <xsl:for-each select="harvest/oai:OAI-PMH/oai:ListRecords/oai:record">
             <xsl:if test="oai:metadata/rif:registryObjects/rif:registryObject/rif:collection">
                 
-                <!--<xsl:result-document method="xml" href="pv_serial_{@id}.xml">-->
-                <my:RedboxCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                    xmlns:xd="http://schemas.microsoft.com/office/infopath/2003" xml:lang="en-au">
-                    
-                    <!-- experiment template -->
-                    <xsl:call-template name="mytardisExperimentTemplate">
-                        <xsl:with-param name="rifcs_collection_record">
-                            <xsl:copy-of select="."/>
-                        </xsl:with-param>
-                    </xsl:call-template>
-                    
-                    <my:Creators>
-                        <xsl:for-each
-                            select="distinct-values(.//oai:metadata/rif:registryObjects/rif:registryObject/rif:collection/rif:relatedObject/rif:key/text())">
-                            <!-- user template-->
-                            <xsl:call-template name="mytardisUserTemplate">
-                                <xsl:with-param name="userKey">
-                                    <xsl:copy-of select="."/>
-                                </xsl:with-param>
-                                <xsl:with-param name="allRecords">
-                                    <xsl:copy-of select="$allRecords"/>
-                                </xsl:with-param>
-                            </xsl:call-template>
-                            
-                        </xsl:for-each>
-                    </my:Creators>
-                    
-                </my:RedboxCollection>
-                <!--</xsl:result-document>-->
+                <xsl:variable name="filename" select="replace(oai:header/oai:identifier/text(),'/','_')"/>
+                  
+                <xsl:result-document method="xml" href="{$originating_mytardis}_{$filename}.xml">
+                    <my:RedboxCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns:xd="http://schemas.microsoft.com/office/infopath/2003" xml:lang="en-au">
+                        
+                        <!-- experiment template -->
+                        <xsl:call-template name="mytardisExperimentTemplate">
+                            <xsl:with-param name="rifcs_collection_record">
+                                <xsl:copy-of select="."/>
+                            </xsl:with-param>
+                        </xsl:call-template>
+                        
+                        <my:Creators>
+                            <xsl:for-each
+                                select="distinct-values(.//oai:metadata/rif:registryObjects/rif:registryObject/rif:collection/rif:relatedObject/rif:key/text())">
+                                <!-- user template-->
+                                <xsl:call-template name="mytardisUserTemplate">
+                                    <xsl:with-param name="userKey">
+                                        <xsl:copy-of select="."/>
+                                    </xsl:with-param>
+                                    <xsl:with-param name="allRecords">
+                                        <xsl:copy-of select="$allRecords"/>
+                                    </xsl:with-param>
+                                </xsl:call-template>
+                                
+                            </xsl:for-each>
+                        </my:Creators>
+                        
+                    </my:RedboxCollection>
+                </xsl:result-document>
             </xsl:if>
             
         </xsl:for-each>
@@ -81,7 +85,7 @@
             <xsl:value-of
                 select="$rifcs_collection_record//oai:metadata/rif:registryObjects/rif:registryObject/rif:collection/@type"
             />
-        </my:Type>
+        </my:Type> 
         
         <my:DateCreated>
             <xsl:value-of select="$rifcs_collection_record//oai:header/oai:datestamp"/>
