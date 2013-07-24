@@ -6,7 +6,10 @@
     exclude-result-prefixes="xsl">
     
     <xsl:variable name="originating_mytardis" select="'caousMyTardis'"/>
-    
+    <xsl:variable name="mytardis_admin_contact_name" select="'caousMyTardis Admin'"/>
+    <xsl:variable name="mytardis_admin_contact_email" select="'caousMyTardis@swin.edu.au'"/>
+    <xsl:variable name="mytardis_admin_contact_phone" select="'0412345678'"/>
+       
     <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
     
     <xsl:template match="/">
@@ -40,9 +43,34 @@
                                         <xsl:copy-of select="$allRecords"/>
                                     </xsl:with-param>
                                 </xsl:call-template>
-                                
+                                 
                             </xsl:for-each>
                         </my:Creators>
+                        
+                        <my:Rights>
+                            <my:RightsAccess>
+                                <xsl:value-of select=".//oai:metadata/rif:registryObjects/rif:registryObject/rif:collection/rif:rights/rif:accessRights"/>
+                            </my:RightsAccess>
+                            <my:RightsCCLicence>
+                                <xsl:value-of select=".//oai:metadata/rif:registryObjects/rif:registryObject/rif:collection/rif:rights/rif:licence/@rightsUri"/>
+                            </my:RightsCCLicence>
+                        </my:Rights>
+                        
+                        <my:SubmissionDetails>
+                            <my:WorkflowSource>
+                                <xsl:value-of select="$originating_mytardis"/>
+                            </my:WorkflowSource>
+                            <my:ContactPersonName>
+                                <xsl:value-of select="$mytardis_admin_contact_name"/>
+                            </my:ContactPersonName>
+                            <my:ContactPersonEmail>
+                                <xsl:value-of select="$mytardis_admin_contact_email"/>
+                            </my:ContactPersonEmail>
+                            <my:ContactPersonPhone>
+                                <xsl:value-of select="$mytardis_admin_contact_phone"/>
+                            </my:ContactPersonPhone>
+                        </my:SubmissionDetails>
+                        
                         
                     </my:RedboxCollection>
                 </xsl:result-document>
